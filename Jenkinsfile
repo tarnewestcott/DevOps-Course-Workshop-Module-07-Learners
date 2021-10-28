@@ -2,8 +2,8 @@ pipeline {
     agent none
 
     stages {
-        stage('Build everything') {
-            parallel {
+        //stage('Build everything') {
+        //    parallel {
                 stage('Build nodejs') {
 
                     agent {
@@ -51,7 +51,7 @@ pipeline {
                         }
                     }
                 }
-            }
-        }
+        //    }
+        //}
     }
 }
