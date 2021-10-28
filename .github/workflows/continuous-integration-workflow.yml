@@ -14,14 +14,11 @@ jobs:
     - name: Dotnet test
       run: dotnet test
 
-    - name: Change dir
-      run: cd DotnetTemplate.Web
-
     - name: npm installation
-      run: npm install
+      run: cd DotnetTemplate.Web && npm install
 
     - name: npm lint
-      run: npm run lint
+      run: cd DotnetTemplate.Web && npm run lint
 
     - name: npm tests
-      run: npm run t
+      run: cd DotnetTemplate.Web && npm run t
