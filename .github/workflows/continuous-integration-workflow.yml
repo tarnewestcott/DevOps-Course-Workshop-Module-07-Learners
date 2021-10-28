@@ -14,8 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2 # Adds a step to checkout the repository code
 
-    - name: DotNet Build
+    - name: DotNet Buildd
+      id: s0001
       run: dotnet build
+      continue-on-error: true
+
+    - name: Check on failures
+      if: steps.s0001.outcome != 'success'
+      run: echo "BOO" && exit 1
 
     - name: Dotnet test
       run: dotnet test
