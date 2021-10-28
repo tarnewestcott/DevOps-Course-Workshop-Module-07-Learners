@@ -16,12 +16,12 @@ jobs:
 
     - name: DotNet Build
       id: s0001
-      run: dotnet buildd
+      run: dotnet build
       continue-on-error: true
 
-    - name: Check on failures
+    - name: Check for DotNet build failure
       if: steps.s0001.outcome != 'success'
-      run: echo "BOO" && exit 1
+      run: echo "Detected a failure" && exit 1
 
     - name: Dotnet test
       run: dotnet test
