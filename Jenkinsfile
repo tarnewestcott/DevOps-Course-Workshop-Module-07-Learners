@@ -26,31 +26,32 @@ pipeline {
                     }
                 }
 
-                stage('Build .Net') {
+                // stage('Build .Net') {
 
-                    environment {
-                        DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
-                    }
+                //     environment {
+                //         DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
+                //     }
 
-                    agent {
-                        docker { image 'mcr.microsoft.com/dotnet/sdk:5.0' }
-                    }
+                //     agent {
+                //         docker { image 'mcr.microsoft.com/dotnet/sdk:5.0' }
+                //     }
 
-                    stages {
-                        stage('Install'){
-                            steps {
-                                echo 'Running build'
-                                sh "dotnet build"
-                            }
-                        }
-                        stage('Test') {
-                            steps {
-                                echo 'Running tests'
-                                sh "dotnet test"
-                            }
-                        }
-                    }
-                }
+                //     stages {
+                //         stage('Install'){
+                //             steps {
+                //                 echo 'Running build'
+                //                 sh "dotnet build"
+                //             }
+                //         }
+                //         stage('Test') {
+                //             steps {
+                //                 echo 'Running tests'
+                //                 sh "dotnet test"
+                //             }
+                //         }
+                //     }
+                // }
+
         //    }
         //}
     }
