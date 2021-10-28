@@ -10,17 +10,14 @@ pipeline {
 
             steps {
                 echo 'Running npm install'
-                cd DotnetTemplate.Web
-                npm install
+                sh "cd DotnetTemplate.Web && npm install"
             }
 
             stages {
                 stage('Test') {
                     steps {
                         echo 'Running tests'
-                        cd DotnetTemplate.Web
-                        npm run lint
-                        npm run test
+                        sh "cd DotnetTemplate.Web && npm run lint && npm run test"
                     }
                 }
             }
