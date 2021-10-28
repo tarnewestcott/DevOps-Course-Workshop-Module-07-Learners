@@ -14,9 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2 # Adds a step to checkout the repository code
 
-    - name: DotNet Buildd
+    - name: DotNet Build
       id: s0001
-      run: dotnet build
+      run: dotnet buildd
       continue-on-error: true
 
     - name: Check on failures
