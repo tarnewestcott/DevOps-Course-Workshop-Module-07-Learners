@@ -22,3 +22,11 @@ jobs:
 
     - name: npm tests
       run: cd DotnetTemplate.Web && npm run test
+
+    - name: TEST GitHub Action trigger data to Slack workflow
+      id: slack
+      uses: slackapi/slack-github-action@v1.14.0
+      with:
+        payload: "{\"text\":\"GitHub -> This is a test from Tarne\"}"
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
