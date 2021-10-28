@@ -10,3 +10,15 @@ jobs:
 
     - name: DotNet Build
       run: dotnet build
+
+    - name: Dotnet test
+      run: dotnet test
+
+    - name: npm installation
+      run: npm install
+
+    - name: npm lint
+      run: npm run lint
+
+    - name: npm tests
+      run: npm run t
