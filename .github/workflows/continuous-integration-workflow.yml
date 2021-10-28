@@ -21,4 +21,4 @@ jobs:
       run: cd DotnetTemplate.Web && npm run lint
 
     - name: npm tests
-      run: cd DotnetTemplate.Web && npm run t
+      run: cd DotnetTemplate.Web && npm run test
