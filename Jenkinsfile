@@ -8,12 +8,13 @@ pipeline {
                 docker { image 'node:14-alpine' }
             }
 
-            steps {
-                echo 'Running npm install'
-                sh "cd DotnetTemplate.Web && npm install"
-            }
-
             stages {
+                stage('Install'){
+                    steps {
+                        echo 'Running npm install'
+                        sh "cd DotnetTemplate.Web && npm install"
+                    }
+                }
                 stage('Test') {
                     steps {
                         echo 'Running tests'
