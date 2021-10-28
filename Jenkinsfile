@@ -23,5 +23,27 @@ pipeline {
                 }
             }
         }
+
+        stage('Build .Net') {
+
+            agent {
+                docker { image 'mcr.microsoft.com/dotnet/sdk:5.0' }
+            }
+
+            stages {
+                stage('Install'){
+                    steps {
+                        echo 'Running build'
+                        sh "dotnet build"
+                    }
+                }
+                stage('Test') {
+                    steps {
+                        echo 'Running tests'
+                        sh "dotnet test"
+                    }
+                }
+            }
+        }
     }
 }
